@@ -1,0 +1,17 @@
+[
+    {
+        "Notification": {
+            "ComparisonOperator": "GREATER_THAN",
+            "NotificationType": "ACTUAL",
+            "Threshold": 60,
+            "ThresholdType": "PERCENTAGE"
+        },
+        "Subscribers": [
+            {
+                "Address": "madhur.cloudevops@gmail.com",
+                "SubscriptionType": "EMAIL"
+            }
+        ]
+    }
+  ]
+  

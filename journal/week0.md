@@ -6,17 +6,17 @@ I put this command to install aws cli :
 ```
 msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
 ```
-![installed](assets/Capture.PNG)
+![installed](../assets/Capture.PNG)
 then To confirm the installation I used this command :  
 ```
 aws --version
 ```
-![It's working](assets/1.PNG)
+![It's working](../assets/1.PNG)
 Then I used this command to configure my account :
 ```
 aws configure
 ```
-![configuration done](assets/2.PNG)
+![configuration done](../assets/2.PNG)
 
 after finishing I went to gitpod to Update my `.gitpod.yml`:
 
@@ -45,7 +45,7 @@ We'll also run these commands individually to perform the installation manually
 - Choose AWS CLI Access
 - Download the CSV with the credentials
 
-![new user is created and It's rloes](assets/3.PNG)
+![new user is created and It's rloes](../assets/3.PNG)
 ### Set Env Vars
 
 We will set these credentials for the current bash terminal
@@ -110,7 +110,7 @@ aws sns subscribe \
 ```
 
 Check your email and confirm the subscription
-![topic is created](assets/5.PNG)
+![topic is created](../assets/5.PNG)
 
 #### Create Alarm
 
@@ -122,7 +122,7 @@ Check your email and confirm the subscription
 ```sh
 aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
 ```
-![Alarm is created](assets/6.PNG)
+![Alarm is created](../assets/6.PNG)
 ## Create an AWS Budget
 
 [aws budgets create-budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
@@ -142,10 +142,10 @@ aws budgets create-budget \
     --budget file://aws/json/budget.json \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
 ```
-![budget is created](assets/4.PNG)
+![budget is created](../assets/4.PNG)
 
 
 ## This is the logical diagram of the project
 
-![the diagram](assets/logicaldiagram.jpeg)
+![the diagram](../assets/logicaldiagram.jpeg)
 

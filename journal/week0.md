@@ -44,6 +44,7 @@ We'll also run these commands individually to perform the installation manually
 - Click on `Security Credentials` and `Create Access Key`
 - Choose AWS CLI Access
 - Download the CSV with the credentials
+
 ![new user is created and It's rloes](assets/3.PNG)
 ### Set Env Vars
 
@@ -145,5 +146,5 @@ aws budgets create-budget \
 
 
 ## This is the logical diagram of the project
-![](assets/logical diagram.jpeg)
+![the diagram](assets/logical diagram.jpeg)
 

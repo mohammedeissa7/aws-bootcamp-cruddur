@@ -146,5 +146,6 @@ aws budgets create-budget \
 
 
 ## This is the logical diagram of the project
-![the diagram](assets/logical diagram.jpeg)
+
+![the diagram](assets/logicaldiagram.jpeg)
 

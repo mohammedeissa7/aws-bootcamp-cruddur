@@ -6,8 +6,8 @@
 
 
 ```sh
-export AWS_REGION="ca-central-1"
-gp env AWS_REGION="ca-central-1"
+export AWS_REGION="us-east-1"
+gp env AWS_REGION="us-east-1"
 ```
 
 Add to the `requirements.txt`
@@ -61,8 +61,11 @@ aws xray create-group \
    --group-name "Cruddur" \
    --filter-expression "service(\"backend-flask\")"
 ```
+![the Xray traces](../assets/xray-traces.PNG)
 
 ```sh
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
+
+![the sampling role](../assets/sampling role.PNG)
 

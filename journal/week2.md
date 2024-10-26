@@ -67,5 +67,5 @@ aws xray create-group \
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
 
-![the sampling role](../assets/sampling role.PNG)
+![the sampling role](../assets/samplingrole.PNG)
 

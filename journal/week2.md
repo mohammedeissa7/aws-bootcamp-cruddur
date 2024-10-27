@@ -99,8 +99,8 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 
 ![the sampling role](../assets/samplingrole.PNG)
 
-![now all traces is done](../assets/xraydata)
-![x-ray is done correctlly](../assets/tracesdone)
+![now all traces is done](../assets/xraydata.PNG)
+![x-ray is done correctlly](../assets/tracesdone.PNG)
 
 ## HoneyComb
 

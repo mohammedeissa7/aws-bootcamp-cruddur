@@ -209,6 +209,59 @@ Set the env var in your backend-flask for `docker-compose.yml`
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
 
+## Rollbar
+https://rollbar.com/
+Create a new project in Rollbar called `Cruddur`
+Add to `requirements.txt`
+```
+blinker
+rollbar
+```
+Install deps
+```sh
+pip install -r requirements.txt
+```
+We need to set our access token
+```sh
+export ROLLBAR_ACCESS_TOKEN=""
+gp env ROLLBAR_ACCESS_TOKEN=""
+```
+Add to backend-flask for `docker-compose.yml`
+```yml
+ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
+```
+Import for Rollbar
+```py
+import os
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+```
+```py
+with app.app_context():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        'fa4bb73b2a4248a883e25425176495e4',
+        # environment name - any string, like 'production' or 'development'
+        'flasktest',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
 
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+```
+to testing rollbar
+```py
+## Simple flask app
 
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+![Rollbar is done](../assets/rollbar.PNG)
 
+# THIS WEEK IS FINISHED
